@@ -1,0 +1,226 @@
+<html>
+    <head>
+
+    </head>
+
+    <h1>Admin Dashboard</h1>
+    <body>
+           
+        <table border="1">
+            <tr>
+                <td style="font-weight:bold">id</td>
+                <td style="font-weight:bold">name season</td>
+                <td style="font-weight:bold">delete</td>
+                <td style="font-weight:bold">edit</td>
+            </tr>
+            <% 
+            for (var i=0; i<data.length; i++)
+            {
+            %>
+            <tr>
+                <td><%= data[i].id %></td>
+                <td><%= data[i].namaseason %></td>
+                <td><a href="/hapus/<%= data[i].id %>">delete</a></td>
+                <td><a href="/editseason/<%= data[i].id %>">edit</a></td>
+            </tr>
+            <% 
+            }
+             %>
+        </table>
+<br>
+        <form method="post" action="/inputseason">
+        Add Season : <input type="text" name="season" placeholder="season">&nbsp
+        <input type="Submit" value="Submit">
+        </form>
+        <br>
+        <br>
+
+<h1>Category Season</h1>   
+        <table border="1">
+        <tr>
+            <td style="font-weight:bold">id</td>
+            <td style="font-weight:bold">season</td>
+            <td style="font-weight:bold">category_season</td>
+            <td style="font-weight:bold">delete</td>
+            <td style="font-weight:bold">edit</td>
+        </tr>
+        <% 
+        for (var i=0; i<data1.length; i++)
+        {
+        %>
+        <tr>
+            <td><%= data1[i].id %></td>
+            <td><%= data1[i].namaseason %></td>
+            <td><%= data1[i].nama_category_season %></td>
+            <td><a href="/delete_category/<%= data1[i].id %>">delete</a></td>
+            <td><a href="/editcategoryseason/<%= data1[i].id %>">edit</a></td>
+        </tr>
+        <% 
+        }
+         %>
+    </table>
+    <br>
+    <form method="post" action="/inputcategory_season">    
+        <select name="id_season" class="form-control style2">
+            <option selected>pilih seasonn</option>
+            <% data.forEach (data => { %>
+                <option value="<%= data.id %>"> <%= data.namaseason %> </option>            
+            <% }) %>
+        </select>
+        Add Category : <input type="text" name="category_season" placeholder="category">&nbsp
+        <input type="Submit" value="Submit">
+    </form>
+        <br>
+        <br>
+
+
+<h1>Product</h1>   
+        <table border="1">
+        <tr>
+            <td style="font-weight:bold">id</td>
+            <td style="font-weight:bold">season</td>
+            <td style="font-weight:bold">category_season</td>
+            <td style="font-weight:bold">nama_product</td>
+            <td style="font-weight:bold">deskripsi</td>
+            <td style="font-weight:bold">harga</td>
+            <td style="font-weight:bold">delete</td>
+            <td style="font-weight:bold">edit</td>
+        </tr>
+        <% 
+        for (var i=0; i<data2.length; i++)
+        {
+        %>
+        <tr>
+            <td><%= data2[i].id %></td>
+            <td><%= data2[i].namaseason %></td>
+            <td><%= data2[i].nama_category_season %></td>
+            <td><%= data2[i].nama_product %></td>
+            <td><%= data2[i].describ %></td>
+            <td><%= data2[i].harga %></td>
+            <td><a href="/delete_category/<%= data2[i].id %>">delete</a></td>
+            <td><a href="/editproduct/<%= data2[i].id %>">edit</a></td>
+        </tr>
+        <% 
+        }
+         %>
+    </table>
+    <br>
+    <form method="post" action="/inputproduct">    
+        <select name="id_category_season" class="form-control style2">
+            <option selected>pilih season</option>
+            <% data1.forEach (x => { %>
+                <option value="<%= x.id %>" > <%= x.namaseason %> || <%= x.nama_category_season %> </option>            
+            <% }) %>
+        </select>
+        &nbsp
+        add Nama Product    : <input type="text" name="nama_product" placeholder="product"/>&nbsp
+        harga   :<input type="text" name="harga" placeholder="harga"/><br><br>
+        describ :<textarea cols='70' rows='3' name="describ" placeholder="describ"></textarea>&nbsp
+                <input type="Submit" value="Submit"/>
+    </form>
+        <br>
+        <br>
+
+<h1>warna</h1>   
+        <table border="1">
+        <tr>
+            <td style="font-weight:bold">id</td>
+            <td style="font-weight:bold">season</td>
+            <td style="font-weight:bold">category product</td>
+            <td style="font-weight:bold">nama product</td>
+            <td style="font-weight:bold">describ</td>
+            <td style="font-weight:bold">harga</td>
+            <td style="font-weight:bold">warna_product</td>
+            
+        </tr>
+        <% 
+        for (var i=0; i<warna.length; i++)
+        {
+        %>
+        <tr>
+            <td><%= warna[i].id %></td>
+            <td><%= warna[i].namaseason %></td>
+            <td><%= warna[i].nama_category_season %></td>
+            <td><%= warna[i].nama_product %></td>
+            <td><%= warna[i].describ %></td>
+            <td><%= warna[i].harga %></td>
+            <td><%= warna[i].warna_product %></td>
+            
+            <td><a href="/delete_category/<%= warna[i].id %>">delete</a></td>
+            <td><a href="/editwarna/<%= warna[i].id %>">edit</a></td>
+        </tr>
+        <% 
+        }
+         %>
+    </table>
+    <br>
+    <form method="post" action="/inputwarna">    
+        <select name="id_product" class="form-control style2">
+            <option selected>pilih season</option>
+            <% data2.forEach (x => { %>
+                <option value="<%= x.id %>" > <%= x.namaseason %> || <%= x.nama_category_season %>||<%=x.nama_product %> </option>            
+            <% }) %>
+        </select>
+        &nbsp
+        add warna product    : <input type="text" name="warna_product" placeholder="product"/>&nbsp
+        <input type="Submit" value="Submit"/>
+    </form>
+        <br>
+        <br>
+
+
+<h1>ukuran dan stock</h1>
+<table border="1">
+        <tr>
+            <td style="font-weight:bold">id</td>
+            <td style="font-weight:bold">season</td>
+            <td style="font-weight:bold">category</td>
+            <td style="font-weight:bold">namam product</td>
+            <td style="font-weight:bold">describ</td>
+            <td style="font-weight:bold">harga</td>
+            <td style="font-weight:bold">warna_product</td>
+            <td style="font-weight:bold">size</td>
+            <td style="font-weight:bold">stock</td>
+        </tr>
+        <% 
+        for (var i=0; i<size.length; i++)
+        {
+        %>
+        <tr>
+            <td><%= size[i].id %></td>
+            <td><%= size[i].namaseason %></td>
+            <td><%= size[i].nama_category_season %></td>
+            <td><%= size[i].nama_product %></td>
+            <td><%= size[i].describ %></td>
+            <td><%= size[i].harga %></td>
+            <td><%= size[i].warna_product %></td>
+            <td><%= size[i].size_product %></td>
+            <td><%= size[i].stock %></td>
+            <td><a href="/editsize/<%= size[i].id %>">edit</a></td>
+            <td><a href="/deletesize/<%= size[i].id %>">delete</a></td>
+            
+        </tr>
+        <% 
+        }
+         %>
+    </table>
+    <br>
+    <form method="post" action="/inputsize">    
+        <select name="sizestock" class="form-control style2">
+            <option selected>pilih season</option>
+            <% warna.forEach (x => { %>
+                <option value="<%= x.id %>" > <%= x.namaseason %> || <%= x.nama_category_season %>||<%=x.nama_product %>||<%=x.warna_product%> </option>            
+            <% }) %>
+        </select>
+        &nbsp
+        add size    : <input type="text" name="size" placeholder="product"/>&nbsp
+        add stock    : <input type="text" name="stock" placeholder="product"/>&nbsp
+        <input type="submit" value="submit"/>
+        
+    </form>
+        <br>
+        <br>
+
+
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <%= typeof notif !== 'undefined' ? notif : null %>
+        <form method="post" action="/login">
+            Username : <input type="text" name="username" placeholder="Username"><br>
+            Password : <input type="password" name="password" placeholder="Password"><br>
+            <font style="color:red"></font><br>
+            <input type="Submit" value="Submit">
+        </form>
+        <a href="/formregister">Register</a>
+    </body>
+</html>

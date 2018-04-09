@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>size & stock</title>
+</head>
+<body>
+    <h1>Season</h1>
+    <table border="1">
+            <tr>
+                <td style="font-weight:bold">season</td>
+                <td style="font-weight:bold">category season</td>
+                <td style="font-weight:bold">name product</td>
+                <td style="font-weight:bold">describ</td>
+                <td style="font-weight:bold">harga</td>
+                <td style="font-weight:bold">warna</td>
+                <td style="font-weight:bold">size</td>
+                <td style="font-weight:bold">stock</td>
+                
+            </tr>
+            <% 
+            for (var i=0; i<size.length; i++)
+            {
+            %>
+            <tr>
+                <td><%= size[i].namaseason %></td>
+                <td><%= size[i].nama_category_season %></td>
+                <td><%= size[i].nama_product %></td>
+                <td><%= size[i].describ %></td>
+                <td><%= size[i].harga %></td>
+                <td><%= size[i].warna_product %></td>
+                <td><a href="/detail/<%= size[i].id %>"><%= size[i].size_product%></a></td>
+                <td><%= size[i].stock %></td>
+                                
+            </tr>
+            <% 
+            }
+             %>
+        </table>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <form method="POST" action="/detailproduk">    
+            <ul>    
+                <li> nama kategori  : <%= detailproduk[0].namaseason %> </li>
+                <li> jenis kategori :<%= detailproduk[0].nama_category_season %> </li>
+                <li> nama produk : <%= detailproduk[0].nama_product %> </li>
+            </ul>    
+            <input type="int" value="<%= detailproduk[0].harga %>" name="harga"/>
+            <ul>
+                <% warna.forEach (x => { %>
+                 <li class="li"><a href="/detail/<%= detailproduk[0].id %>?id_warna_product=<%= x.id %>"><%= x.warna %></a></li>       
+                <% }) %>  
+            </ul>         
+                <% if (typeof size !== 'undefined') {
+                    size.forEach(x => { %>
+                    <input<%= x.stock === 0 ? 'disabled' : null%> type="radio" name="idproduk" value="<%= x.id %>"> Ukuran <%= x.ukuran %> & Stok <%= x.stock === 0 ? 'SOLD OUT' : x.stock %></input><br>
+                    <%  })
+                } %>
+            <input type="number" name="jumlahbeli" placeholder="Jumlah Beli">    
+            <button class="btn btn-success" type="submit">+ CART </button>    
+            </form> 
+    </body>
+</html>
+

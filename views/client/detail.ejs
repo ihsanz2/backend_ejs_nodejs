@@ -1,0 +1,36 @@
+<html>
+<head>
+   <title> </title>
+</head>
+
+<body>
+<form action='/cart' method='post'>
+       <ul>
+       <br>
+       <br>
+       <h3> Detail Produk Pilihan Anda : : </h3>
+   <% detail.forEach(function(a){%>
+
+           <li name=''>    Produk :  <%= a.namaseason %> </li>
+           <li name=''>    Jenis Produk :  <%= a.nama_category_season %> </li>
+           <li name=''>    Nama Produk :  <%= a.nama_product %> </li>            
+           <li name=''>    Warna :  <%= a.warna_product %> </li>
+           <li name=''>    Stok Produk :  <%= a.stock %> </li>
+           <li name=''>    Ukuran :  <%= a.size_product %> </li>
+           <li name=''>    Harga   :  <%= a.harga %> </li> 
+           <li name=''>    Describ   :  <%= a.describ %> </li>
+               
+   <% })%>
+          
+       <br>
+       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+       <input name="id" value="<%= detail[0].id%>" readonly="readonly" >
+       <input name="size_product" value="<%= detail[0].size_product %>"readonly='readonly' >
+       <input name="harga" value="<%= detail[0].harga %>"readonly='readonly' >
+       &nbsp
+       <input type='number' name='inputbeli' placeholder='Masukkan jumlah barang'>
+       <input type='submit' value='submit'>
+   </form>
+
+
+</body>

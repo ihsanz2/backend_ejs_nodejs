@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><h3  > Keranjang Belanja Anda : </h3></title>
+</head>
+<body>
+    <table class="table table-striped"  >
+        <tr style='background-color:skyblue'>
+            <th> nama produk </th>
+            <th> warna    </th>
+            <th> ukuran     </th>
+            <th> stock   </th>
+            <th> kuantitas    </th>
+            <th> Price    </th>                                                    
+        </tr>
+    <% cart.forEach(function(a){%>
+        <tr>
+            <td><%=a.nama_produk%></td>
+            <td><%=a.warna_product%></td>
+            <td><%=a.size_product%></td>
+            <td><%=a.stock%></td>
+            <td><%=a.quantity%></td>
+            <td><%=a.price%></td>                                                                                                                
+        </tr>
+ 
+    <% })%>
+ </table>
+</body>
+</html>

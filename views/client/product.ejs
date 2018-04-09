@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>user</title>
+</head>
+<body>
+    <h1>product</h1>
+    <table border="1">
+            <tr>
+                <td style="font-weight:bold">season</td>
+                <td style="font-weight:bold">name season</td>
+                <td style="font-weight:bold">name product</td>
+                
+            </tr>
+            <% 
+            for (var i=0; i<product.length; i++)
+            {
+            %>
+            <tr>
+                <td><%= product[i].namaseason %></td>
+                <td><%= product[i].nama_category_season %></td>
+                <td><a href="/warnaproduk/<%= product[i].id %>"><%= product[i].nama_product %></a></td>
+            </tr>
+            <% 
+            }
+             %>
+        </table>
+    
+</body>
+</html>

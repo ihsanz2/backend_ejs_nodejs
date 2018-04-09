@@ -1,0 +1,9 @@
+<body>
+         <h1>Season</h1>
+            <div class="list-group">
+                <% season.forEach (x => { %>  
+                   <li> <a href="/seasoncategory/<%= x.id %>"><%= x.namaseason %></a></li>
+                <% }) %>        
+            </div>
+    </div>
+</body>
